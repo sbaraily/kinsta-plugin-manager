@@ -24,7 +24,9 @@ const App = () => {
 		});
 
 		const data = await resp.json();
+		console.log(data);
 		const companySites = data.company.sites;
+		console.log(companySites);
 
 		// Get all environments for each site
 		const sitesEnvironmentData = companySites.map(async (site) => {
@@ -44,7 +46,7 @@ const App = () => {
 				id: siteId,
 				name: site.display_name,
 				environments: environments,
-			};
+			}; 
 		});
 
 		// Wait for all the promises to resolve
